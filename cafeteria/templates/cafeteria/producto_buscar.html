@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<div class="Banner">
+    <img src="{% static 'images/banner.jpg' %}" alt="Banner" class="imageBanner">
+    <div class="Overlay">
+        <p>PRODUCTOS</p>
+    </div>
+</div>
+</div>
+<div class="buscarDiv">
+    <form class="buscar" action="{% url 'producto_encontrar' %}" method="get">
+        {% csrf_token %}
+        <input type="text" name="buscar" id="buscar" placeholder="Buscar">
+        <input type="submit" value="Buscar">
+    </form>
+    </div>
+
+{% endblock contenido %}
+    

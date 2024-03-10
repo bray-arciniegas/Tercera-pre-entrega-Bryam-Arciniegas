@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<div class="Banner">
+    <img src="{% static 'images/banner.jpg' %}" alt="Banner" class="imageBanner">
+    <div class="Overlay">
+        <p>Cafeteria  Malibu<br><span class="Overlay2">Delicias del sur</span></p>
+    </div>
+</div>
+
+<h3 class="Titulo">Productos recomendados</h3>
+
+<div class="showcase">
+
+
+<div class = "tarjeta">
+    <img src="{% static 'images/2.jpg' %}" alt="Producto" class="imagenProducto">
+    <h5 class="nombreProducto">Producto</h5>
+    <h6 class="precioProdcto">$99.999</h6>
+</div>
+
+<div class = "tarjeta">
+    <img src="{% static 'images/2.jpg' %}" alt="Producto" class="imagenProducto">
+    <h5 class="nombreProducto">Producto</h5>
+    <h6 class="precioProdcto">$99.999</h6>
+</div>
+
+<div class = "tarjeta">
+    <img src="{% static 'images/1.jpg' %}" alt="Producto" class="imagenProducto">
+    <h5 class="nombreProducto">Producto</h5>
+    <h6 class="precioProdcto">$99.999</h6>
+</div>
+
+<div class = "tarjeta">
+    <img src="{% static 'images/1.jpg' %}" alt="Producto" class="imagenProducto">
+    <h5 class="nombreProducto">Producto</h5>
+    <h6 class="precioProdcto">$99.999</h6>
+</div>
+
+<div class = "tarjeta">
+    <img src="{% static 'images/1.jpg' %}" alt="Producto" class="imagenProducto">
+    <h5 class="nombreProducto">Producto</h5>
+    <h6 class="precioProdcto">$99.999</h6>
+</div>
+
+
+</div>
+
+<h3 class="Titulo">Opiniones</h3>
+
+<div class="Reviews">
+    <h5 class="autor">Elon Musk</h5>
+    <h6 class="comentario">Que rico cafesito me tome en mi tesla</h6>
+    <h5>★★★★★</h5>
+</div>
+
+<div class="Reviews">
+    <h5 class="autor">Benito el conejito</h5>
+    <h6 class="comentario">Puñeta estaba bien cabron</h6>
+    <h5>★★★★<span class="puntuacionDown">★</span></h5>
+</div>
+
+<div class="Botones">
+    <a class="Boton" href="{% url 'clientes' %}">Ver Clientes</a>
+    <a class="Boton" href="{% url 'reseñas' %}">Ver Reseñas</a>
+    <a class="Boton" href="{% url 'productos' %}">Ver Productos</a>
+    <a class="Boton" href="{% url 'productos_buscar' %}">Buscar productos</a>
+</div>
+
+{% endblock contenido %}
+    

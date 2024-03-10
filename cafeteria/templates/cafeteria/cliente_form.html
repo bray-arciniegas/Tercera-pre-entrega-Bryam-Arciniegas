@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<div class="Banner">
+    <img src="{% static 'images/banner.jpg' %}" alt="Banner" class="imageBanner">
+    <div class="Overlay">
+        <p>CLIENTES</p>
+    </div>
+</div>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <table class="formulario">
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Guardar">
+</form>
+
+{% endblock contenido %}
+    

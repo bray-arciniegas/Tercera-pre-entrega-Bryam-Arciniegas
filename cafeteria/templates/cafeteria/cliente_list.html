@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<div class="Banner">
+    <img src="{% static 'images/banner.jpg' %}" alt="Banner" class="imageBanner">
+    <div class="Overlay">
+        <p>CLIENTES</p>
+    </div>
+</div>
+
+<table>
+    <tr>
+        <td width="200"><h2>Clientes</h2></td>
+        <td>
+        <a class="Boton" href="{% url 'clientes_create' %}">Añadir</a>
+        </td>
+    </tr>
+</table>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Direccion</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for c in cliente_list %}
+        <tr>
+            <td>{{ c.id }}</td>
+            <td>{{ c.nombre }}</td>
+            <td>{{ c.apellido }}</td>
+            <td>{{ c.direccion }}</td>
+            <td>{{ c.email }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+{% endblock contenido %}
+    

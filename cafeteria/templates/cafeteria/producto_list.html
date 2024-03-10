@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<div class="Banner">
+    <img src="{% static 'images/banner.jpg' %}" alt="Banner" class="imageBanner">
+    <div class="Overlay">
+        <p>PRODUCTOS</p>
+    </div>
+</div>
+
+<table>
+    <tr>
+        <td width="200"><h2>Productos</h2></td>
+        <td>
+        <a class="Boton" href="{% url 'productos_create' %}">Añadir</a>
+        </td>
+    </tr>
+</table>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in producto_list %}
+        <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.nombre }}</td>
+            <td>{{ p.precio }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+{% endblock contenido %}
+    

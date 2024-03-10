@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<div class="Banner">
+    <img src="{% static 'images/banner.jpg' %}" alt="Banner" class="imageBanner">
+    <div class="Overlay">
+        <p>RESEÑAS</p>
+    </div>
+</div>
+
+<table>
+    <tr>
+        <td width="200"><h2>Reseñas</h2></td>
+        <td>
+        <a class="Boton" href="{% url 'reseñas_create' %}">Añadir</a>
+        </td>
+    </tr>
+</table>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Autor</th>
+            <th>Puntuacion</th>
+            <th>Comentario</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for r in reseña_list %}
+        <tr>
+            <td>{{ r.id }}</td>
+            <td>{{ r.autor }}</td>
+            <td>{{ r.puntuacion }}</td>
+            <td>{{ r.comentario }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+{% endblock contenido %}
+    
